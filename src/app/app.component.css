@@ -1,0 +1,13 @@
+h1 {
+    color: brown;
+    text-align: center;
+    left: 45%;
+    top: 25px;
+}
+app-success{
+    color: green;
+}
+
+app-warning{
+    color: red;
+}
