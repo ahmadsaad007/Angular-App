@@ -3,13 +3,14 @@
 <app-warning></app-warning>
 <div class="form">
     <h2>Two way data binding</h2>
-    Enter your name here: <input type="text" [(ngModel)]='inputValue'>
+    Enter your name here: <input type="text" [(ngModel)]='inputValue' name='inputValue'>
     <p>Hello {{inputValue}}</p>
-    <button type="reset" [disabled]='true'>Reset</button>
+    <button type="reset" [disabled]='!inputValue' (click)="inputValue=''">Reset</button>
 </div>
 
 <div class="directive">
     <button (click)='onIncreaseClick()'>Display Detail</button>
-    <p>Secret Password: Tuna</p>
-    <p [style.background-color]="blueText">The counter is {{counter}}</p>
+    <p *ngIf="this.isButtonVisible">Secret Password: Tuna</p>
+    <div *ngFor='let counts of counter' [style.background-color]="getColor(counts)" [style.color]='getText(counts)' >The counter is {{counts}}
+    </div>
 </div>
